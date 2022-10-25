@@ -1,6 +1,6 @@
 {
   "name": "mywatchlist-web",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -32,6 +32,10 @@
       "react-app/jest"
     ]
   },
+  "engines" : {
+    "npm" : ">=8.0.0",
+    "node" : ">=16.0.0"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -50,12 +54,12 @@
     "type": "git",
     "url": "git+https://github.com/MrConnorr/mywatchlist-web.git"
   },
-  "author": "",
+  "author": "Roman 'Connor' Konstantinov",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MrConnorr/mywatchlist-web/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/MrConnorr/mywatchlist-web#readme",
   "devDependencies": {
     "sass": "^1.54.5"
   }
