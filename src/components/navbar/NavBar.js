@@ -5,13 +5,15 @@ import Button from "../../utilities/Button";
 import logo from "../../assets/Logo.png";
 import LoggedUser from "./LoggedUser";
 import Cookies from 'js-cookie';
-
+import {useNavigate} from "react-router-dom";
 
 function NavBar(props)
 {
     const {isLoggedIn, setIsLoggedIn} = props;
 
     const [user, setUser] = useState({});
+
+    const navigate = useNavigate();
 
     useEffect(() =>
     {
@@ -66,8 +68,8 @@ function NavBar(props)
                     <div className={styles.search_container}><SearchBar apiKey={props.apiKey} /></div>
                     {!isLoggedIn &&
                         <div className={styles.auth_container}>
-                            <Button width="60px" href="/auth/login" state="secondary">Login</Button>
-                            <Button width="60px" href="/auth/signup">Sign Up</Button>
+                            <Button width="60px" onClick={() => navigate("/auth/login")} state="secondary">Login</Button>
+                            <Button width="60px" onClick={() => navigate("/auth/login")} >Sign Up</Button>
                         </div>
                     }
 
