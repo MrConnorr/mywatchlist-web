@@ -55,7 +55,7 @@
   "bugs": {
     "url": "https://github.com/MrConnorr/mywatchlist-web/issues"
   },
-  "homepage": "https://github.com/MrConnorr/mywatchlist-web#readme",
+  "homepage": "",
   "devDependencies": {
     "sass": "^1.54.5"
   }
