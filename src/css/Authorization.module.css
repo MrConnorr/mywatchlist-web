@@ -1,0 +1,254 @@
+@import '../utilities/css/Colors.css';
+
+.authorization_main_container
+{
+    display: flex;
+
+    margin: -50px -50px -50px;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    perspective: 2000px;
+}
+
+.auth_container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+}
+
+.form
+{
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.auth_content
+{
+    display: flex;
+    justify-content: center;
+
+    width: 400px;
+    min-height: 500px;
+    background: var(--background);
+    border-radius: 10px;
+
+    padding: 10px;
+
+    box-shadow: 0 0 100px black;
+}
+
+.username_input
+{
+    width: 275px !important;
+    padding-right: 40px !important;
+}
+
+.login_container, .signup_container
+{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.remember_me_container
+{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.remember_me
+{
+    display: flex;
+    align-items: center;
+
+    padding: 5px 5px 5px 0;
+    width: 50%;
+    cursor: pointer;
+}
+
+.remember_me input
+{
+    width: 20px;
+    height: 20px;
+}
+
+.remember_me input:focus
+{
+    outline: none;
+}
+
+.forgot_password
+{
+    display: flex;
+    width: 50%;
+    justify-content: flex-end;
+}
+
+.forgot_password a
+{
+    text-decoration: none;
+    color: var(--primaryBtn);
+}
+
+.forgot_password a:hover
+{
+    text-decoration: none;
+    color: var(--primaryBtnHover);
+}
+
+.posters_background
+{
+    display: flex;
+    flex-wrap: wrap;
+
+    position: absolute;
+    z-index: -1;
+
+    width: calc(100vw + 650px);
+    height: calc(100vh + 300px);
+
+    left: -35%;
+    top: -25%;
+    right: 0;
+
+    gap: 5px;
+    transform: rotateY(-20deg) rotateX(20deg) scale(1.1);
+    filter: brightness(50%);
+}
+
+.img_container
+{
+    display: flex;
+    height: 300px;
+    flex: 1 0 400px;
+}
+
+.posters_background img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.signup_prompt_container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.signup_prompt_container b
+{
+    cursor: pointer;
+    color: var(--primaryBtn);
+}
+
+.signup_prompt_container b:hover
+{
+    color: var(--primaryBtnHover);
+}
+
+.profile_pic_container
+{
+    display: flex;
+    gap: 10px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_pic_container img
+{
+    width: 200px;
+    height: 200px;
+
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.profile_pic_container:hover img
+{
+    filter: brightness(50%);
+}
+
+.profile_pic_container:hover .drag_and_drop_info
+{
+    visibility: visible !important;
+}
+
+input[type="file"]
+{
+    position: absolute;
+
+    height: 200px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.drag_and_drop_info
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: absolute;
+}
+
+.drag_and_drop_info b
+{
+    color: var(--primaryBtn);
+    cursor: pointer;
+}
+.drag_and_drop_info b:hover
+{
+    color: var(--primaryBtnHover);
+}
+
+input[type="submit"]
+{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    cursor: pointer;
+
+    color: var(--btnText);
+    background: var(--primaryBtn);
+}
+
+input[type="submit"]:hover
+{
+    background: var(--primaryBtnHover);
+}
+
+.username_container
+{
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+}
+
+.icon
+{
+    display: flex;
+
+    margin-left: 300px;
+
+    position: absolute;
+}

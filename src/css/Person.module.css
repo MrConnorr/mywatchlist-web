@@ -1,0 +1,195 @@
+
+.person_container
+{
+    display: flex;
+
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person_content
+{
+    display: flex;
+    width: 1400px;
+    justify-content: center;
+    gap: 20px;
+}
+
+.general_info
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.general_info img, .profile_path_placeholder
+{
+    width: 280px;
+    height: 420px;
+
+    border-radius: 10px;
+}
+
+
+.person_content h1
+{
+    margin: 0;
+    padding: 0;
+}
+
+.person_personal_info
+{
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.person_personal_info h3
+{
+    padding: 0;
+    margin: 0;
+}
+
+.known_for
+{
+    display: flex;
+}
+
+.general_info2
+{
+    display: flex;
+    width: 75%;
+    flex-direction: column;
+}
+
+.biography_container
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.biography_paragraphs_container
+{
+    max-height: 222px;
+    overflow: hidden;
+    line-height: 1.5em;
+}
+
+.biography_paragraphs_container::after
+{
+    content: '';
+    position: absolute;
+
+    width: 100%;
+    height: 20px;
+    bottom: 0;
+
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(22, 22, 26, 0.2) 10%, var(--background) 100%);
+}
+
+.read_more_container
+{
+    display: flex;
+    position: absolute;
+
+    width: 100%;
+    height: 10px;
+    justify-content: center;
+
+    bottom: 0;
+
+    z-index: 2;
+}
+
+.profile_path_placeholder
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #fff;
+    color: var(--background);
+}
+
+.homepage
+{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.credits_container
+{
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 30px;
+
+    gap: 20px;
+}
+
+.show_more_credits
+{
+    display: flex;
+    justify-content: center;
+}
+
+.person_department_btns
+{
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    gap: 10px;
+    box-shadow: 0 0 30px black;
+}
+
+.credits_table
+{
+    box-shadow: 0 0 30px black;
+    border-radius: 10px;
+}
+
+.credits_table tbody
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.credits_table tbody tr
+{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.credits_year
+{
+    width: 40px;
+    text-align: center;
+}
+
+.credits_table a
+{
+    all: unset;
+}
+
+.credits_title a:hover
+{
+    color: var(--primaryBtnHover);
+    cursor: pointer;
+}
+
+.credits_title span
+{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.credits_table tbody tr td
+{
+    padding: 10px;
+}
+
+.credits_table tbody tr:last-child
+{
+    border: none;
+}

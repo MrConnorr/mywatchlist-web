@@ -1,0 +1,446 @@
+.user_container
+{
+    display: flex;
+    justify-content: center;
+}
+
+.user_info_container
+{
+    display: flex;
+    flex-direction: column;
+
+    width: 1575px;
+}
+
+.user_info
+{
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+.username
+{
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.username h1
+{
+    font-size: 55px;
+    margin: 0;
+    padding: 0;
+}
+
+.profile_pic
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_pic_background
+{
+    position: absolute;
+    z-index: -1;
+    width: 300px;
+    height: 300px;
+    border: 10px solid;
+    filter: blur(10px);
+}
+
+.user_info img
+{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.list_controls
+{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.watchlist_container
+{
+    display: flex;
+    justify-content: center;
+}
+
+.watchlist_items_container
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.watchlist_item
+{
+    display: flex;
+    position: relative;
+    cursor: pointer;
+
+}
+
+.watchlist_item:hover .delete_btn
+{
+    display: flex;
+}
+
+.poster
+{
+    display: flex;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.poster img, .poster_placeholder
+{
+    width: 250px;
+    height: 375px;
+
+    transition: transform .2s;
+}
+
+.poster:hover img, .poster_placeholder:hover
+{
+    transform: scale(1.1);
+}
+
+.item_user_info_container
+{
+    display: flex;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 3;
+}
+
+.item_content_container
+{
+    display: flex;
+    position: relative;
+    width: 1100px;
+    height: 500px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.item_user_content
+{
+    display: flex;
+    position: relative;
+
+    width: 970px;
+
+    padding: 15px;
+    gap: 20px;
+
+    border-radius: 10px;
+    box-shadow: 0 0 50px black;
+    background: var(--background);
+}
+
+
+.item_user_content img, .poster_placeholder_user_info
+{
+    height: 100%;
+    border-radius: 10px;
+}
+
+.item_user_content img
+{
+    width: 300px;
+}
+
+.poster_placeholder_user_info
+{
+    width: 310px;
+}
+
+.item_content
+{
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 300px);
+
+    gap: 10px;
+
+    overflow: hidden;
+}
+
+.item_content textarea
+{
+    display: flex;
+    flex-direction: column;
+
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(22, 22, 26, 0.15);
+    color: #fff;
+
+    height: 100%;
+
+    resize: none;
+
+    font-size: 16px;
+}
+
+.item_content textarea:focus
+{
+    background: var(--background);
+    outline: solid 2px var(--primaryBtn);
+}
+
+.item_top
+{
+    display: flex;
+    align-items: flex-start;
+}
+
+.item_top h3
+{
+    width: 100%;
+    margin: 0;
+}
+
+.item_content p
+{
+    margin: 0;
+    padding-right: 10px;
+    white-space: pre-line;
+    overflow-y: scroll;
+}
+
+.item_user_status
+{
+    display: flex;
+
+    gap: 20px;
+}
+
+.item_user_status span
+{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 10px;
+    height: 100%;
+}
+
+.item_user_status select
+{
+    border-radius: 5px;
+
+    background: #666666;
+    border-color: rgba(22, 22, 26, 0.15);
+    color: #fff;
+}
+
+.item_user_status select option
+{
+    all: unset;
+}
+
+.right_arrow, .left_arrow
+{
+    display: flex;
+    align-items: center;
+
+    font-size: 50px;
+    user-select: none;
+
+    cursor: pointer;
+}
+
+.right_arrow:hover, .left_arrow:hover
+{
+    color: var(--primaryBtn);
+}
+
+.delete_btn, .watch_status, .external_link
+{
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+
+    width: 35px;
+    height: 35px;
+
+    right: -10px;
+
+    z-index: 2;
+
+    border-radius: 50%;
+    background: var(--background);
+    box-shadow: 0 0 10px black;
+}
+
+.delete_btn
+{
+    display: none;
+    bottom: 350px;
+}
+
+.delete_btn:hover, .external_link:hover
+{
+    background: var(--tertiaryBtnHover);
+    color: var(--primaryBtnHover);
+}
+
+.watch_status
+{
+    flex-direction: column;
+    align-self: flex-end;
+    bottom: -5px;
+}
+
+.external_link
+{
+    right: 0;
+    left: -10px;
+    bottom: 350px;
+}
+
+.watch_status select
+{
+    position: absolute;
+    bottom: -20px;
+}
+
+.watch_status_icon
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete_btn svg, .watch_status_icon svg, .select_watch_status li svg, .external_link svg, .media_type_buttons svg
+{
+    width: 20px;
+    height: 20px;
+}
+
+.select_watch_status
+{
+    all: unset;
+
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: -135px;
+
+    background: var(--background);
+    box-shadow: 0 15px 30px #000;
+
+    border-radius: 0 0 10px 10px;
+}
+
+.select_watch_status li
+{
+    all: unset;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 35px;
+    height: 35px;
+}
+
+.select_watch_status li:hover
+{
+    background: var(--tertiaryBtnHover);
+}
+
+.select_watch_status li:hover:last-child
+{
+    border-radius: 0 0 10px 10px;
+}
+
+.filter_container
+{
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 20px;
+
+    gap: 10px;
+}
+
+.filter_buttons_container
+{
+    display: flex;
+    padding: 10px;
+
+    border-radius: 10px;
+    box-shadow: 0 0 30px black;
+}
+
+.filter_buttons, .media_type_buttons
+{
+    display: flex;
+}
+
+.filter_buttons
+{
+    width: 70%;
+}
+
+.media_type_buttons
+{
+    display: flex;
+    justify-content: flex-end;
+    width: 30%;
+}
+
+.empty_watchlist_container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 375px;
+}
+
+.poster_placeholder, .poster_placeholder_user_info
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #fff;
+    color: var(--background);
+}
+
+.poster_placeholder b
+{
+    font-size: 24px;
+    padding: 5px;
+    overflow-wrap: break-word;
+}

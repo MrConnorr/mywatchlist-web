@@ -1,0 +1,51 @@
+@import '../utilities/css/Colors.css';
+
+.user_icon img
+{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+.user_info
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background: var(--background);
+    min-width: 200px;
+
+    top: 100%;
+    right: 50px;
+    padding: 10px;
+    gap: 10px;
+
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+    border-radius: 0 0 10px 10px;
+}
+
+.username
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.user_info img
+{
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.user_control
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}

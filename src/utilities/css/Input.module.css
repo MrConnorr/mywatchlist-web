@@ -1,0 +1,20 @@
+.input
+{
+    display: flex;
+    flex-direction: column;
+
+    min-width: 300px;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 24px;
+
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(22, 22, 26, 0.15);
+    color: #fff;
+}
+
+.input:focus
+{
+    background: var(--background);
+    outline: solid 2px var(--primaryBtn);
+}

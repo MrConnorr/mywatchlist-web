@@ -1,0 +1,87 @@
+@import './Colors.css';
+
+.primary
+{
+    background: var(--primaryBtn);
+    border: 1px solid var(--primaryBtn);
+}
+
+.secondary
+{
+    background: var(--secondaryBtn);
+    border: 1px solid var(--secondaryBtn);
+}
+
+.tertiary
+{
+    border: 1px solid rgba(0, 0, 0, 0.0);
+}
+
+.ghost
+{
+    border: 1px solid var(--primaryBtn);
+}
+
+.delete
+{
+    background: var(--deleteBtnColor);
+    border: 1px solid var(--deleteBtnColor);
+}
+
+
+.primary, .secondary, .ghost, .tertiary, .disabled, .delete, .noBG
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5px;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--btnText);
+}
+
+.primary:hover
+{
+    background: var(--primaryBtnHover);
+}
+
+.secondary:hover
+{
+    background: var(--secondaryBtnHover);
+}
+
+.tertiary:hover
+{
+    background: var(--tertiaryBtnHover);
+    border: 1px solid var(--tertiaryBtnHover);
+}
+
+.ghost:hover
+{
+    background: var(--primaryBtn)
+}
+
+.delete:hover
+{
+    background: var(--deleteBtnHover);
+}
+
+.noBG:hover
+{
+    color: var(--primaryBtn);
+}
+
+.icon
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disabled
+{
+    color: var(--disabledColor);
+}

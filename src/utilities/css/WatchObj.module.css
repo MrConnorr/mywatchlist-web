@@ -1,0 +1,320 @@
+.watchObject_container
+{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    margin: -100px -50px 0 90px;
+    background-size: 100vw;
+    background-repeat: no-repeat;
+
+}
+
+.watchObj_content
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.watchObj_content p
+{
+    width: 32vw;
+}
+
+.watchObj_content img
+{
+    width: 500px;
+}
+
+.title
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title h1
+{
+    margin: 0;
+}
+
+.title span
+{
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.title a
+{
+    margin-top: 5px;
+}
+
+.general_info
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.general_info ul
+{
+    display: flex;
+    margin: 0;
+    padding: 0;
+
+    gap: 20px;
+}
+
+.general_info ul li:first-child
+{
+    list-style: none;
+}
+
+.genres
+{
+    border-radius: 5px;
+    padding: 2px 5px 2px 5px;
+    background: var(--primaryBtn);
+}
+
+.general_info2
+{
+    display: flex;
+    gap: 20px;
+}
+
+.rating_container
+{
+    display: flex;
+
+    gap: 20px;
+}
+
+.tmdb_rating_container, .mwl_rating_container
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.tmdb_rating_container svg
+{
+    width: 60px;
+}
+
+.rating
+{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.seasons_info
+{
+    display: flex;
+}
+
+.tagline
+{
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+}
+
+.overview
+{
+    margin-top: 20px;
+}
+
+.watchObj_trailer
+{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.watchObj_trailer iframe, .more_cast
+{
+    display: flex;
+    position: relative;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.close_trailer
+{
+    display: flex;
+    position: absolute;
+
+    top: 11%;
+    left: 85%;
+    transform: translate(-50%, -89%);
+}
+
+.cast_container
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.cast_title
+{
+    display: flex;
+    align-items: center;
+}
+
+.cast_title a
+{
+    width: 7%;
+}
+
+.cast_title h2
+{
+    width: 100%;
+}
+
+.persons_container
+{
+    display: flex;
+    width: 100%;
+    gap: 10px;
+}
+
+.person
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    flex: 1;
+
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+
+    box-shadow: 0 10px 20px black;
+    transition: transform .2s;
+}
+
+.profile_path_placeholder
+{
+    height: 100%;
+}
+
+.person_info
+{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.person_info span
+{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.more_cast_container
+{
+    display: flex;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    z-index: 5;
+}
+
+.more_cast
+{
+    flex-direction: column;
+    padding: 5px 15px 15px 15px;
+    border-radius: 10px;
+    gap: 10px;
+
+    width: 1000px;
+    height: 500px;
+    overflow: scroll;
+
+    background: var(--background);
+    box-shadow: 0 0 50px black;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.more_cast_info
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.more_cast_top
+{
+    display: flex;
+}
+
+.more_cast_top h3
+{
+    width: 100%;
+    margin: 0;
+}
+
+.more_cast_person
+{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    width: 190px;
+    gap: 10px;
+}
+
+.more_cast_person img, .profile_path_placeholder_more
+{
+    height: 285px;
+    border-radius: 10px;
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+.more_cast_person:hover img, .profile_path_placeholder_more:hover, .person:hover
+{
+    transform: scale(1.05);
+}
+
+.profile_path_placeholder_more, .profile_path_placeholder
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #fff;
+    color: var(--background);
+}
+
+.more_cast_person_info
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.homepageBtn
+{
+    display: flex;
+}

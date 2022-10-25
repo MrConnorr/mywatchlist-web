@@ -1,0 +1,19 @@
+:root
+{
+    --background: rgb(22, 22, 26);
+    --headline: #deb992;
+    --text: #94a1b2;
+    --primaryBtn: #7f5af0;
+    --primaryBtnHover: rgba(127, 90, 240, 0.8);
+    --btnText: #fffffe;
+    --secondaryBtn: rgba(255, 255, 255, 0.15);
+    --secondaryBtnHover: rgba(255, 255, 255, 0.25);
+    --secondBtnText: #7f5af0;
+    --tertiaryBtnHover: rgb(41, 41, 47);
+    --disabledColor: rgba(255, 255, 255, 0.5);
+    --deleteBtnColor: #C6394A;
+    --deleteBtnHover: rgb(236, 30, 48);
+    --error: #C6394A;
+    --warning: #E6BD19;
+    --success: #1EA966;
+}
