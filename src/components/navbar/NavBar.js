@@ -47,6 +47,14 @@ function NavBar(props)
                 .then(response => response.json())
                 .then(data =>
                 {
+                    if(data.length === 0)
+                    {
+                        Cookies.remove('token');
+                        Cookies.remove('username');
+                        window.location.reload(true);
+                        return;
+                    }
+
                     setUser({_id: data._id, username: data.username, userProfilePic: data.userProfilePic});
                 })
         }
@@ -68,8 +76,8 @@ function NavBar(props)
                     <div className={styles.search_container}><SearchBar apiKey={props.apiKey} /></div>
                     {!isLoggedIn &&
                         <div className={styles.auth_container}>
-                            <Button width="60px" onClick={() => navigate("/auth/login")} state="secondary">Login</Button>
-                            <Button width="60px" onClick={() => navigate("/auth/login")} >Sign Up</Button>
+                            <Button width="60px" href="/auth/login" state="secondary">Login</Button>
+                            <Button width="60px" href="/auth/signup" >Sign Up</Button>
                         </div>
                     }
 

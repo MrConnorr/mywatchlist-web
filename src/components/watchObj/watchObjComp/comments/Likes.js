@@ -122,7 +122,7 @@ function Likes(props)
                 <div className={styles.likes_container} onMouseEnter={() => clearInterval(closeLikesTimer)} onMouseLeave={e => handleMouseHovering(e)}>
                     {likesArr.map(like =>
                         <a key={like.userId} className={styles.like_content} href={`/user/${like.username}`}>
-                            <img src={`https://mywatchlist-apiv2.herokuapp.com/usersProfilePics/${like.username}-profilePic.png`} alt={like.username + " profile picture"}/>
+                            <img src={`https://res.cloudinary.com/hlzbzu7fj/image/upload/${like.username}-profilePic.png`} alt={like.username + " profile picture"}/>
                             {like.username.slice(0, 6)}...
                         </a>
                     )}

@@ -6,6 +6,7 @@ import { Icons } from './Icons';
 import Moment from "moment/moment";
 import {Helmet} from "react-helmet-async";
 import Rating from "../components/watchObj/watchObjComp/Rating";
+import Preloader from "./Preloader";
 
 function WatchObjList(props)
 {
@@ -47,12 +48,14 @@ function WatchObjList(props)
 
     return (
         <div className={styles.container}>
+            <Preloader loading={data.results === undefined} />
+
             <Helmet>
                 <title>{mediaType ? mediaType.charAt(0).toUpperCase() + mediaType.slice(1) + " | My Watch List" : searchParams.get(`query`) + " | My Watch List"}</title>
             </Helmet>
             <div className={styles.watchObj_element_container}>
 
-                {currentPage > totalPages || data.length === 0 || data.results.length === 0 ?
+                {currentPage > totalPages || data.results === undefined ?
                     <div className={styles.no_result}>
                         <h1>There are no results that matched your query.</h1>
                     </div>

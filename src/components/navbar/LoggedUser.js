@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Cookies from "js-cookie";
 import styles from '../../css/LoggedUser.module.css'
 import Button from "../../utilities/Button";

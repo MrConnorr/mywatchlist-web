@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import SignUp from "./SignUp";
 import Login from "./Login";
 import {Helmet} from "react-helmet-async";
+import Preloader from "../../utilities/Preloader";
 
 function Authorization(props)
 {
@@ -16,6 +17,8 @@ function Authorization(props)
     redirectOnToken();
 
     const [page, setPage] = useState(1);
+
+    const [isLoading, setIsLoading] = useState(true);
 
 
     useEffect(() =>
@@ -39,8 +42,15 @@ function Authorization(props)
         }
     }
 
+    setTimeout(() =>
+    {
+        setIsLoading(false)
+    }, 800);
+
     return (
         <div className={styles.authorization_main_container}>
+            <Preloader loading={isLoading} />
+
             <Helmet>
                 <title>{option !== undefined ? option === "signup" ? "Sign Up | My Watch List" : "Login | My Watch List" : ""}</title>
             </Helmet>

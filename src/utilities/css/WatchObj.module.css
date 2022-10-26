@@ -62,7 +62,7 @@
     margin: 0;
     padding: 0;
 
-    gap: 20px;
+    gap: 1.042vw;
 }
 
 .general_info ul li:first-child
@@ -241,13 +241,12 @@
 .more_cast
 {
     flex-direction: column;
-    padding: 5px 15px 15px 15px;
     border-radius: 10px;
     gap: 10px;
 
-    width: 1000px;
+    width: 1030px;
     height: 500px;
-    overflow: scroll;
+
 
     background: var(--background);
     box-shadow: 0 0 50px black;
@@ -262,14 +261,22 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
+
+    overflow: scroll;
+
+    border-radius: 10px;
+
+    padding: 10px 15px 15px 15px;
 }
 
 .more_cast_top
 {
     display: flex;
+
+    padding: 15px 15px 5px 15px;
 }
 
-.more_cast_top h3
+.more_cast_top h2
 {
     width: 100%;
     margin: 0;

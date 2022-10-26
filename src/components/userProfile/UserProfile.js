@@ -239,7 +239,7 @@ function UserProfile(props)
                         <div className={styles.profile_pic}>
                             <div className={styles.profile_pic_background} style={{borderImage:
                                     `linear-gradient(to right top, ${imageColors.map(color => color)}) 1`}} />
-                            <img src={`https://mywatchlist-apiv2.herokuapp.com/${user.userProfilePic}`} alt={user.username + " profile picture"}/>
+                            <img src={user.userProfilePic} alt={user.username + " profile picture"}/>
                         </div>
 
                         <div className={styles.username}>

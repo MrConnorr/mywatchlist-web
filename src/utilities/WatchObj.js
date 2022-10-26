@@ -10,6 +10,7 @@ import {Icons} from "./Icons";
 import actorImgPlaceholder from "../assets/actorImgPlaceholder.png";
 import {Helmet} from "react-helmet-async";
 import NotFound from "../components/NotFound";
+import Preloader from "./Preloader";
 
 function WatchObj(props)
 {
@@ -24,6 +25,8 @@ function WatchObj(props)
 
     const [showTrailer, setShowTrailer] = useState(false);
     const [showMoreCast, setShowMoreCast] = useState(false);
+
+    const [isLoading, setIsLoading] = useState(true);
 
     const {watchObjId} = useParams();
     const {mediaType} = useParams();
@@ -47,6 +50,8 @@ function WatchObj(props)
 
                 setMessage("");
                 setState("");
+
+                setIsLoading(false);
             })
             .catch(err =>
             {
@@ -67,6 +72,8 @@ function WatchObj(props)
 
     return (
         <div style={{fontSize: "1.8vh"}}>
+            <Preloader loading={isLoading} />
+
             <Helmet>
                 <title>{title + " | My Watch List"}</title>
             </Helmet>
@@ -174,7 +181,7 @@ function WatchObj(props)
                     <div className={styles.more_cast_container} onClick={() => setShowMoreCast(false)}>
                         <div className={styles.more_cast} onClick={e => e.stopPropagation()}>
                             <div className={styles.more_cast_top}>
-                                <h3>Cast</h3>
+                                <h2>Cast</h2>
                                 <Button state="tertiary" icon="close" onClick={() => setShowMoreCast(false)}/>
                             </div>
                             <div className={styles.more_cast_info}>
