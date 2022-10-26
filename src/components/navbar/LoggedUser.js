@@ -23,7 +23,7 @@ function LoggedUser(props)
     return (
         <>
             <div className={styles.user_icon} onClick={handleUserIconClicked}>
-                <img src={user.userProfilePic ? `https://mywatchlist-apiv2.herokuapp.com/${user.userProfilePic}` : null} alt="Profile picture" />
+                <img src={user.userProfilePic} alt="Profile picture" />
             </div>
 
             {isUserIconClicked &&
