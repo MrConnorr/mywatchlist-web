@@ -29,7 +29,7 @@ function LoggedUser(props)
             {isUserIconClicked &&
                 <div className={styles.user_info}>
                     <div className={styles.username}>
-                        <a href={`/user/${user.username}`}><img src={`https://mywatchlist-apiv2.herokuapp.com/${user.userProfilePic}`} alt={user.username + " profile picture"} /></a> {user.username}
+                        <a href={`/user/${user.username}`}><img src={user.userProfilePic} alt={user.username + " profile picture"} /></a> {user.username}
                     </div>
                     <div className={styles.user_control}>
                         <Button justifyContent="flex-start" state="tertiary" icon="user" href={`/user/${user.username}`}>Profile</Button>
