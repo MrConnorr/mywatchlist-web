@@ -38,7 +38,13 @@ function WatchObj(props)
             .then(response => response.json())
             .then(data =>
             {
-                if(data.status_code === 34) return setIsWatchObjFound(false);
+                if(data.status_code === 34)
+                {
+                    setIsWatchObjFound(false);
+                    setIsLoading(false);
+
+                    return;
+                }
 
                 setIsWatchObjFound(true);
 
