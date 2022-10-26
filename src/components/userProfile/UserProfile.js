@@ -387,21 +387,22 @@ function UserProfile(props)
                                                     <div className={styles.item_content}>
                                                         <div className={styles.item_top}>
                                                             <h3>{watchArrItem.watchObject.title ? watchArrItem.watchObject.title : watchArrItem.watchObject.name}</h3>
-                                                            <Review watchObjId={watchArrItem.id}
-                                                                    score={score}
-                                                                    review={review}
-                                                                    watchStatus={watchStatus}
+                                                            {isProfileOwner &&
+                                                                <Review watchObjId={watchArrItem.id}
+                                                                        score={score}
+                                                                        review={review}
+                                                                        watchStatus={watchStatus}
 
-                                                                    setMessage={setMessage}
-                                                                    setState={setState}
+                                                                        setMessage={setMessage}
+                                                                        setState={setState}
 
-                                                                    setUserWatchlist={setUserWatchlist}
+                                                                        setUserWatchlist={setUserWatchlist}
 
-                                                                    isReviewClicked={isReviewClicked}
-                                                                    setIsReviewClicked={setIsReviewClicked}
+                                                                        isReviewClicked={isReviewClicked}
+                                                                        setIsReviewClicked={setIsReviewClicked}
 
-                                                                    isCheckDisabled={isCheckDisabled}
-                                                                    setIsCheckDisabled={setIsCheckDisabled}/>
+                                                                        isCheckDisabled={isCheckDisabled}
+                                                                        setIsCheckDisabled={setIsCheckDisabled} />}
                                                             <Button title="Close" state="tertiary" icon="close" onClick={() =>
                                                             {
                                                                 setIsReviewClicked(false);
