@@ -13,6 +13,7 @@ import {handleDelete} from "./WatchlistObjDelete";
 import Input from "../../utilities/Input";
 import ReactStars from "react-rating-stars-component";
 import NotFound from "../NotFound";
+import Preloader from "../../utilities/Preloader";
 
 function UserProfile(props)
 {
@@ -228,6 +229,8 @@ function UserProfile(props)
 
     return (
         <div className={styles.user_container}>
+            <Preloader loading={Object.keys(user).length === 0} />
+
             <Helmet>
                 <title>{user.username + " | My Watch List"}</title>
             </Helmet>
@@ -409,7 +412,7 @@ function UserProfile(props)
 
                                                         <div className={styles.item_user_status}>
                                                             <span>
-                                                                <b>User score</b> {watchArrItem.score !== null ?
+                                                                <b>User score</b> {watchArrItem.score === null && !isReviewClicked ? "-" :
                                                                 <ReactStars
                                                                     count={5}
                                                                     size={24}
@@ -420,7 +423,7 @@ function UserProfile(props)
                                                                     emptyIcon={Icons.star}
                                                                     halfIcon={Icons.halfStar}
                                                                     filledIcon={Icons.star}
-                                                                    key={starKeyForce} /> : "-"}
+                                                                    key={starKeyForce} />}
                                                             </span>
                                                             <span>
                                                                 <b>Status</b>
