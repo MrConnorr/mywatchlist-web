@@ -67,7 +67,7 @@ function Comments(props)
 
                                 <div className={styles.comment_info}>
                                     <div className={styles.user_info}>
-                                        <a className={styles.username} href={`http://localhost:3000/user/${comment.createdBy.username}`}>{comment.createdBy.username}</a>
+                                        <a className={styles.username} href={`/user/${comment.createdBy.username}`}>{comment.createdBy.username}</a>
                                         <span style={{color: "rgba(255, 255, 255, 0.7)"}}>Created: {Moment(comment.createdDate).format("DD.MM.YYYY HH:mm")}</span>
                                     </div>
 
