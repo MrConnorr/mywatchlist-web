@@ -23,6 +23,8 @@ function WatchObjList(props)
 
     const totalPages = data.total_pages > 500 ? 500 : data.total_pages;
 
+    const [mouseButton, setMouseButton] = useState(null);
+
     for(let i = 1; i <= totalPages; i++)
     {
         pages.push(i);
@@ -62,44 +64,45 @@ function WatchObjList(props)
                 : null}
 
                 {data.results ? data.results.map(watchObj =>
-                    <div className={styles.watchObj_content} key={watchObj.id}
-                         onClick={() => handleClick(watchObj)}
-                         onMouseOver={() => setHoveredObjId(watchObj.id)}
-                         onMouseLeave={() => setHoveredObjId(null)}>
-                        <div className={styles.poster}>
 
-                            {watchObj.poster_path !== null && watchObj.profile_path !== null &&
-                                <img src={`https://image.tmdb.org/t/p/original${watchObj.poster_path ? watchObj.poster_path : watchObj.profile_path}`} alt={watchObj.title ? watchObj.title + " poster" : watchObj.name + " profile picture"} />
-                            }
+                    <a style={{all: "unset"}} key={watchObj.id} href={mediaType ? `/${mediaType === "movies" ? "movie" : mediaType}/${watchObj.id}` : `/${watchObj.media_type === "tv" ? "series" : watchObj.media_type}/${watchObj.id}`}>
+                        <div className={styles.watchObj_content}
+                             onMouseOver={() => setHoveredObjId(watchObj.id)}
+                             onMouseLeave={() => setHoveredObjId(null)}>
+                            <div className={styles.poster}>
 
-                            {!watchObj.poster_path && !watchObj.profile_path &&
-                                <div className={styles.poster_placeholder}>
-                                    {watchObj.media_type === "person" ? Icons.person : Icons.movieClapper}
+                                {watchObj.poster_path !== null && watchObj.profile_path !== null &&
+                                    <img src={`https://image.tmdb.org/t/p/original${watchObj.poster_path ? watchObj.poster_path : watchObj.profile_path}`} alt={watchObj.title ? watchObj.title + " poster" : watchObj.name + " profile picture"} />
+                                }
+
+                                {!watchObj.poster_path && !watchObj.profile_path &&
+                                    <div className={styles.poster_placeholder}>
+                                        {watchObj.media_type === "person" ? Icons.person : Icons.movieClapper}
+                                    </div>
+                                }
+                            </div>
+
+                            {hoveredObjId === watchObj.id &&
+                                <div className={styles.watchObj_info}>
+
+                                    <h4>{title(watchObj.title ? watchObj.title : watchObj.name)}</h4>
+                                    <div style={{display: watchObj.release_date || watchObj.first_air_date ? "flex" : "none" }}>Release date: {Moment(watchObj.release_date ? watchObj.release_date : watchObj.first_air_date ? watchObj.first_air_date : null).format("DD.MM.YYYY")}</div>
+                                    <div style={{display: watchObj.media_type !== "person" ? "flex" : "none" }} className={styles.rating_container}>
+                                        <div className={styles.tmdb_rating_container}>
+                                            <b>TMDB</b>
+                                            <div className={styles.rating}><Rating otherRating={Math.round(watchObj.vote_average * 10)} /></div>
+                                        </div>
+                                        <div className={styles.mlw_rating_container}>
+                                            <b>MWL</b>
+                                            <div className={styles.rating}><Rating isMWL={true} mediaType={watchObj.media_type ? watchObj.media_type : mediaType === "movies" ? "movie" : mediaType} watchObjId={watchObj.id}/></div>
+                                        </div>
+                                    </div>
+                                    <p>{watchObj.overview ? watchObj.overview.length > 100 ? watchObj.overview.slice(0, 100) + "..." : watchObj.overview : watchObj.known_for_department ? "Known for: " + watchObj.known_for_department : null}</p>
+                                    <Button onClick={() => handleClick(watchObj)}>Learn more</Button>
                                 </div>
                             }
                         </div>
-
-                        {hoveredObjId === watchObj.id &&
-                            <div className={styles.watchObj_info}>
-
-                                <h4>{title(watchObj.title ? watchObj.title : watchObj.name)}</h4>
-                                <div style={{display: watchObj.release_date || watchObj.first_air_date ? "flex" : "none" }}>Release date: {Moment(watchObj.release_date ? watchObj.release_date : watchObj.first_air_date ? watchObj.first_air_date : null).format("DD.MM.YYYY")}</div>
-                                <div style={{display: watchObj.media_type !== "person" ? "flex" : "none" }} className={styles.rating_container}>
-                                    <div className={styles.tmdb_rating_container}>
-                                        <b>TMDB</b>
-                                        <div className={styles.rating}><Rating otherRating={Math.round(watchObj.vote_average * 10)} /></div>
-                                    </div>
-                                    <div className={styles.mlw_rating_container}>
-                                        <b>MWL</b>
-                                        <div className={styles.rating}><Rating isMWL={true} mediaType={watchObj.media_type ? watchObj.media_type : mediaType === "movies" ? "movie" : mediaType} watchObjId={watchObj.id}/></div>
-                                    </div>
-                                </div>
-                                <p>{watchObj.overview ? watchObj.overview.length > 100 ? watchObj.overview.slice(0, 100) + "..." : watchObj.overview : watchObj.known_for_department ? "Known for: " + watchObj.known_for_department : null}</p>
-                                <Button onClick={() => handleClick(watchObj)}>Learn more</Button>
-                            </div>
-                        }
-
-                    </div>
+                    </a>
 
                 ) : null}
 

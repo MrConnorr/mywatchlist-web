@@ -46,8 +46,6 @@ function WatchObj(props)
                     return;
                 }
 
-                setIsWatchObjFound(true);
-
                 setWatchObjData(data);
                 setSimilar(data.similar.results);
                 setRecommendations(data.recommendations.results);
@@ -57,6 +55,7 @@ function WatchObj(props)
                 setMessage("");
                 setState("");
 
+                setIsWatchObjFound(true);
                 setIsLoading(false);
             })
             .catch(err =>

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Cookies from "js-cookie";
 import styles from "../../../../css/CommentAdding.module.css";
 import Button from "../../../../utilities/Button";
+import {useNavigate} from "react-router-dom";
 
 function CommentsAdding(props)
 {
@@ -10,9 +11,13 @@ function CommentsAdding(props)
     const [comment, setComment] = useState("");
     const url = isReplyClicked ? `https://mywatchlist-apiv2.herokuapp.com/comments/${mediaType}/${watchObjId}/${commentId}` : `https://mywatchlist-apiv2.herokuapp.com/comments/${mediaType}/${watchObjId}`;
 
+    const navigate = useNavigate();
+
     const handleCommentAdding = e =>
     {
         e.preventDefault();
+
+        if(!Cookies.get('token')) return navigate(`/auth/login`);
 
         if(!comment.trim().length)
         {

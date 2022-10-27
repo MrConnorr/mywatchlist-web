@@ -1,6 +1,6 @@
 .preloader_container
 {
-    display: flex;
+/*    display: flex;*/
     align-items: center;
     justify-content: center;
     position: fixed;
@@ -13,4 +13,7 @@
     background: var(--background);
 
     z-index: 100000;
+
+    transition: opacity 0.2s;
+
 }

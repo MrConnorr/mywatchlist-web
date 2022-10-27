@@ -62,7 +62,6 @@
 
     background: var(--background);
     box-shadow: 0 0 50px black;
-
 }
 
 .state
@@ -91,6 +90,7 @@
     gap: 10px;
 
     padding: 15px;
+
 }
 
 .message_content
@@ -107,10 +107,41 @@
     width: 100%;
 }
 
+.progressbar_container
+{
+    display: flex;
+    position: absolute;
+    align-self: flex-end;
+
+    width: 100%;
+}
+
+.progressbar
+{
+    display: flex;
+    width: 0;
+
+    margin-bottom: 5px;
+    margin-left: 25px;
+
+    height: 2px;
+    background: #fff;
+
+    border-radius: 10px;
+
+/*    animation: progressBarAnimation 7s linear;
+    animation-delay: 1s;*/
+}
+
+.progress_bar_animation
+{
+    animation: progressBarAnimation 7s linear;
+}
+
 @keyframes progressBarAnimation
 {
     0%	{ width: 0;}
-    100% { width: 100%;}
+    100% { width: 90%;}
 }
 
 .close_container
