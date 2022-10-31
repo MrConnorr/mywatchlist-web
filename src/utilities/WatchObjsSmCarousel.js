@@ -67,15 +67,15 @@ function WatchObjsSmCarousel(props)
             {watchObjects !== null && watchObjects !== undefined ?
                 <>
                     {watchObjects.map(watchObj =>
-                        <a style={{all: "unset"}} key={watchObj.id} href={handleClick(watchObj)}>
-                            <SwiperSlide onMouseOver={() =>
-                            {
-                                setHoveredObjId(watchObj.id);
-                                setHoveredObjMediaType(watchObj.media_type);
-                            }} onMouseLeave={() => {
-                                setHoveredObjId(null);
-                                setHoveredObjMediaType(null);
-                            }} className={styles[props.type === "person" ? "list_element_person" : "list_element_other"]}>
+                        <SwiperSlide onMouseOver={() =>
+                        {
+                            setHoveredObjId(watchObj.id);
+                            setHoveredObjMediaType(watchObj.media_type);
+                        }} onMouseLeave={() => {
+                            setHoveredObjId(null);
+                            setHoveredObjMediaType(null);
+                        }} key={watchObj.id} className={styles[props.type === "person" ? "list_element_person" : "list_element_other"]}>
+                            <a style={{all: "unset", display: "flex", position: "absolute", width: "100%", height: "100%"}} href={handleClick(watchObj)}>
                                 {watchObj.backdrop_path || watchObj.poster_path ?
                                     <img loading="lazy" src={`https://image.tmdb.org/t/p/original${watchObj.backdrop_path ? watchObj.backdrop_path : watchObj.poster_path}`} alt={watchObj.title ? watchObj.title + " backdrop" : watchObj.name + " backdrop"} />
                                 : null}
@@ -93,8 +93,8 @@ function WatchObjsSmCarousel(props)
                                         <Button href={handleClick(watchObj)}>Learn more</Button>
                                     </div>
                                 }
-                            </SwiperSlide>
-                        </a>
+                            </a>
+                        </SwiperSlide>
                     )}
                 </>
             : null}
