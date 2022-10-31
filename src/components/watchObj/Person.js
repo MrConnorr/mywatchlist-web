@@ -49,7 +49,7 @@ function Person(props)
                 setCast(data.combined_credits.cast);
                 setCrew(data.combined_credits.crew);
             });
-    }, []);
+    }, [watchObjId]);
 
     useEffect(() =>
     {

@@ -47,7 +47,7 @@ function WatchObjsSmCarousel(props)
     {
         if(isToucheEnded)
         {
-            navigate(`/${props.mediaType ? props.mediaType  === "tv" ? "series" : props.mediaType : hoveredObjMediaType === "tv" ? "series" : hoveredObjMediaType }/${watchObj.id}`);
+            return `/${props.mediaType ? props.mediaType  === "tv" ? "series" : props.mediaType : hoveredObjMediaType === "tv" ? "series" : hoveredObjMediaType }/${watchObj.id}`;
         }
     }
 
@@ -67,32 +67,34 @@ function WatchObjsSmCarousel(props)
             {watchObjects !== null && watchObjects !== undefined ?
                 <>
                     {watchObjects.map(watchObj =>
-                        <SwiperSlide onMouseOver={() =>
-                        {
-                            setHoveredObjId(watchObj.id);
-                            setHoveredObjMediaType(watchObj.media_type);
-                        }} onMouseLeave={() => {
-                            setHoveredObjId(null);
-                            setHoveredObjMediaType(null);
-                        }} key={watchObj.id} className={styles[props.type === "person" ? "list_element_person" : "list_element_other"]} onClick={() => handleClick(watchObj)}>
-                            {watchObj.backdrop_path || watchObj.poster_path ?
-                                <img loading="lazy" src={`https://image.tmdb.org/t/p/original${watchObj.backdrop_path ? watchObj.backdrop_path : watchObj.poster_path}`} alt={watchObj.title ? watchObj.title + " backdrop" : watchObj.name + " backdrop"} />
-                            : null}
+                        <a style={{all: "unset"}} key={watchObj.id} href={handleClick(watchObj)}>
+                            <SwiperSlide onMouseOver={() =>
+                            {
+                                setHoveredObjId(watchObj.id);
+                                setHoveredObjMediaType(watchObj.media_type);
+                            }} onMouseLeave={() => {
+                                setHoveredObjId(null);
+                                setHoveredObjMediaType(null);
+                            }} className={styles[props.type === "person" ? "list_element_person" : "list_element_other"]}>
+                                {watchObj.backdrop_path || watchObj.poster_path ?
+                                    <img loading="lazy" src={`https://image.tmdb.org/t/p/original${watchObj.backdrop_path ? watchObj.backdrop_path : watchObj.poster_path}`} alt={watchObj.title ? watchObj.title + " backdrop" : watchObj.name + " backdrop"} />
+                                : null}
 
-                            {!watchObj.backdrop_path && !watchObj.poster_path &&
-                                <div className={styles.poster_placeholder}>
-                                    {Icons.movieClapper}
-                                </div>
-                            }
+                                {!watchObj.backdrop_path && !watchObj.poster_path &&
+                                    <div className={styles.poster_placeholder}>
+                                        {Icons.movieClapper}
+                                    </div>
+                                }
 
-                            {hoveredObjId === watchObj.id &&
-                                <div className={styles.watchObj_content}>
-                                    <h4>{watchObj.title ? watchObj.title.length > 33 ? watchObj.title.slice(0, 33) + "..." : watchObj.title : watchObj.name.length > 33 ? watchObj.name.slice(0, 33) + "..." : watchObj.name}</h4>
-                                    <p>{watchObj.overview.length > 100 ? watchObj.overview.slice(0, 100) + "..." : watchObj.overview}</p>
-                                    <Button onClick={() => handleClick(watchObj)}>Learn more</Button>
-                                </div>
-                            }
-                        </SwiperSlide>
+                                {hoveredObjId === watchObj.id &&
+                                    <div className={styles.watchObj_content}>
+                                        <h4>{watchObj.title ? watchObj.title.length > 33 ? watchObj.title.slice(0, 33) + "..." : watchObj.title : watchObj.name.length > 33 ? watchObj.name.slice(0, 33) + "..." : watchObj.name}</h4>
+                                        <p>{watchObj.overview.length > 100 ? watchObj.overview.slice(0, 100) + "..." : watchObj.overview}</p>
+                                        <Button href={handleClick(watchObj)}>Learn more</Button>
+                                    </div>
+                                }
+                            </SwiperSlide>
+                        </a>
                     )}
                 </>
             : null}
