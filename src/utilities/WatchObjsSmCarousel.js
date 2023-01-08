@@ -4,7 +4,7 @@ import styles from './css/WatchObjsSmCarousel.module.css';
 import Button from "./Button";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode } from 'swiper'
+import {FreeMode, Navigation} from 'swiper'
 import 'swiper/swiper.min.css';
 import 'swiper/modules/pagination/pagination.min.css';
 import "swiper/modules/effect-fade/effect-fade.min.css";
@@ -57,8 +57,8 @@ function WatchObjsSmCarousel(props)
             spaceBetween={10}
             freeMode={true}
             watchSlidesProgress={true}
-            pagination={{clickable: true,}}
-            modules={[FreeMode]}
+            navigation={true}
+            modules={[FreeMode, Navigation]}
             style={{boxShadow: "0 0 30px black", borderRadius: "10px"}}
             onTouchEnd={() => setIsToucheEnded(true)}
             onSliderMove={() => setIsToucheEnded(false)}

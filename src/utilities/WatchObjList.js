@@ -94,7 +94,7 @@ function WatchObjList(props)
                                         </div>
                                         <div className={styles.mlw_rating_container}>
                                             <b>MWL</b>
-                                            <div className={styles.rating}><Rating isMWL={true} mediaType={watchObj.media_type ? watchObj.media_type : mediaType === "movies" ? "movie" : mediaType} watchObjId={watchObj.id}/></div>
+                                            <div className={styles.rating}><Rating isMWL={true} showNR={false} mediaType={watchObj.media_type ? watchObj.media_type : mediaType === "movies" ? "movie" : mediaType} watchObjId={watchObj.id}/></div>
                                         </div>
                                     </div>
                                     <p>{watchObj.overview ? watchObj.overview.length > 100 ? watchObj.overview.slice(0, 100) + "..." : watchObj.overview : watchObj.known_for_department ? "Known for: " + watchObj.known_for_department : null}</p>

@@ -15,3 +15,27 @@ h1, h2, h3, h4
 {
   color: var(--headline);
 }
+
+.swiper-button-next, .swiper-button-prev
+{
+  color: var(--primaryBtn) !important;
+}
+
+.swiper-pagination-bullet-active
+{
+  background: var(--primaryBtn) !important;
+}
+
+.swiper-pagination-bullet
+{
+  background: var(--primaryBtnHover) !important;
+}
+
+.CircularProgressbar-text
+{
+  transform: translate(0, 3px);
+
+  font-weight: bold;
+}
+
+

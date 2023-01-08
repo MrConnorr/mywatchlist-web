@@ -36,11 +36,17 @@
     align-items: center;
 
     gap: 5px;
-    padding: 5px 10px 5px 10px;
+    padding: 0 10px;
+
+    line-height: 34px;
+
     cursor: pointer;
     border-radius: 5px;
     text-decoration: none;
     color: var(--btnText);
+
+    user-select: none;
+
 }
 
 .primary:hover
