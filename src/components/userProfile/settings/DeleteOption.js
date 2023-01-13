@@ -13,7 +13,7 @@ function DeleteOption(props)
 
     const handleDeleteAccount = () =>
     {
-        fetch(`${process.env.API_LINK}/user`,
+        fetch(`https://mywatchlistapi.onrender.com/user`,
             {
                 method: "DELETE",
                 headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},

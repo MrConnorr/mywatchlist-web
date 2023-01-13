@@ -12,7 +12,7 @@ function VerificationCompleting(props)
 
     useEffect(() =>
     {
-        fetch(`${process.env.API_LINK}/user/verify/${token}`,
+        fetch(`https://mywatchlistapi.onrender.com/user/verify/${token}`,
             {
                 method: "POST"
             })

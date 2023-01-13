@@ -19,7 +19,7 @@ function NavBar(props)
     {
         if(Cookies.get('token') !== undefined)
         {
-            fetch(`${process.env.API_LINK}/user/checkToken/${Cookies.get('token')}`)
+            fetch(`https://mywatchlistapi.onrender.com/user/checkToken/${Cookies.get('token')}`)
                 .then(response => response.json())
                 .then(data =>
                 {
@@ -40,7 +40,7 @@ function NavBar(props)
     {
         if(isLoggedIn !== false)
         {
-            fetch(`${process.env.API_LINK}/user/`,
+            fetch(`https://mywatchlistapi.onrender.com/user/`,
                 {
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`}
                 })

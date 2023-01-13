@@ -2,7 +2,7 @@ import Cookies from "js-cookie";
 
 export const handleDelete = (setUserWatchlist, setMessage, setState, watchlistArrObjId) =>
 {
-    fetch(`${process.env.API_LINK}/user/watchlist/${watchlistArrObjId}`,
+    fetch(`https://mywatchlistapi.onrender.com/user/watchlist/${watchlistArrObjId}`,
         {
             method: "DELETE",
             headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},

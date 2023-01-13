@@ -18,7 +18,7 @@ function Rating(props)
     {
         if(mediaType !== "person" && isMWL)
         {
-            fetch(`${process.env.API_LINK}/rating/${mediaType === "movie" ? mediaType : "series"}/${watchObjId}`)
+            fetch(`https://mywatchlistapi.onrender.com/rating/${mediaType === "movie" ? mediaType : "series"}/${watchObjId}`)
                 .then(response => response.json())
                 .then(data =>
                 {

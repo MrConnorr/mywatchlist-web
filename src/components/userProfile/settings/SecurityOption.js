@@ -15,7 +15,7 @@ function SecurityOption(props)
     {
         e.preventDefault();
 
-        fetch(`${process.env.API_LINK}/user/password`,
+        fetch(`https://mywatchlistapi.onrender.com/user/password`,
             {
                 method: "PATCH",
                 headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},

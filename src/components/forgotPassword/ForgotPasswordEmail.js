@@ -12,7 +12,7 @@ function ForgotPasswordEmail(props)
     {
         e.preventDefault();
 
-        fetch(`${process.env.API_LINK}/user/forgotPassword`,
+        fetch(`https://mywatchlistapi.onrender.com/user/forgotPassword`,
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},

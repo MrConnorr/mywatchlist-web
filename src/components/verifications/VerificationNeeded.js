@@ -29,7 +29,7 @@ function VerificationNeeded(props)
 
         if(!currentEmail.toLowerCase().match(emailValidation))
         {
-            fetch(`${process.env.API_LINK}/user/getEmail/${currentEmail}`)
+            fetch(`https://mywatchlistapi.onrender.com/user/getEmail/${currentEmail}`)
                 .then(response => response.json())
                 .then(data => setCurrentEmail(data.email))
                 .catch(err => console.log(err))
@@ -71,7 +71,7 @@ function VerificationNeeded(props)
 
     const handleEmailChange = () =>
     {
-        fetch("${process.env.API_LINK}/user/verify/changeEmail",
+        fetch("https://mywatchlistapi.onrender.com/user/verify/changeEmail",
             {
                 method: "PATCH",
                 headers: {'Content-Type': 'application/json'},
@@ -87,7 +87,7 @@ function VerificationNeeded(props)
             {
                 if (data.error) throw new Error(data.error);
 
-                fetch(`${process.env.API_LINK}/user/verifyResend`,
+                fetch(`https://mywatchlistapi.onrender.com/user/verifyResend`,
                     {
                         method: "POST",
                         headers: {'Content-Type': 'application/json'},
@@ -123,7 +123,7 @@ function VerificationNeeded(props)
     const handleVerifyResend = () =>
     {
         setIsVerifyResendClicked(true);
-        fetch(`${process.env.API_LINK}/user/verifyResend`,
+        fetch(`https://mywatchlistapi.onrender.com/user/verifyResend`,
             {
                 method: "POST",
                 headers: {'Content-Type': 'application/json'},

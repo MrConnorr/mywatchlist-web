@@ -18,7 +18,7 @@ function ForgotPasswordChange(props)
 
     useEffect(() =>
     {
-        fetch(`${process.env.API_LINK}/user/checkToken/${token}`)
+        fetch(`https://mywatchlistapi.onrender.com/user/checkToken/${token}`)
             .then(response => response.json())
             .then(data =>
             {
@@ -40,7 +40,7 @@ function ForgotPasswordChange(props)
     {
         e.preventDefault();
 
-        fetch(`${process.env.API_LINK}/user/forgotPassword/${token}`,
+        fetch(`https://mywatchlistapi.onrender.com/user/forgotPassword/${token}`,
             {
                 method: 'PATCH',
                 headers: {'Content-Type': 'application/json'},

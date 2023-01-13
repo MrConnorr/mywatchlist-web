@@ -27,7 +27,7 @@ function Settings(props)
 
     useEffect(() =>
     {
-        fetch(`${process.env.API_LINK}/user/`,
+        fetch(`https://mywatchlistapi.onrender.com/user/`,
             {
                 headers: {'Authorization': `Bearer ${Cookies.get('token')}`}
             })

@@ -28,7 +28,7 @@ function SignUp(props)
         body.append('password', repeatPassword);
         body.append('userProfilePic', profilePic);
 
-        fetch(`${process.env.API_LINK}/user/signup`,
+        fetch(`https://mywatchlistapi.onrender.com/user/signup`,
             {
                 method: "POST",
                 body: body
@@ -113,7 +113,7 @@ function SignUp(props)
     {
         if(checkUsername !== "")
         {
-            fetch(`${process.env.API_LINK}/user/check/${checkUsername}`)
+            fetch(`https://mywatchlistapi.onrender.com/user/check/${checkUsername}`)
                 .then(response => response.json())
                 .then(data => {
                     setIsUsernameAvailable(data.available);
@@ -128,7 +128,7 @@ function SignUp(props)
     return (
         <div className={styles.signup_container}>
             <h1>Sign Up</h1>
-            <form className={styles.form} method="POST" encType="multipart/form-data" action={`${process.env.API_LINK}/user/signup`} onSubmit={validation}>
+            <form className={styles.form} method="POST" encType="multipart/form-data" action={`https://mywatchlistapi.onrender.com/user/signup`} onSubmit={validation}>
                 <div className={styles.username_container}>
                     <Input type="text" className={styles.username_input} placeholder="Username" maxLength="20" name="username" onChange={e => setUsername(e.target.value)} />
                     {checkUsername !== "" && <div className={styles.icon}>{Icons[isUsernameAvailable ? "check" : "close"]}</div>}

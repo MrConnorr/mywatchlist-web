@@ -13,7 +13,7 @@ function CommentsDeleting(props)
     {
         if(Cookies.get(`token`))
         {
-            fetch(`${process.env.API_LINK}/comments/userComments/${mediaType}/${watchObjId}`,
+            fetch(`https://mywatchlistapi.onrender.com/comments/userComments/${mediaType}/${watchObjId}`,
                 {
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`}
                 })
@@ -45,7 +45,7 @@ function CommentsDeleting(props)
 
     const handleCommentDelete = () =>
     {
-        fetch(`${process.env.API_LINK}/comments/${mediaType}/${watchObjId}/${commentId}`,
+        fetch(`https://mywatchlistapi.onrender.com/comments/${mediaType}/${watchObjId}/${commentId}`,
             {
                 method: 'DELETE',
                 headers: {'Authorization': `Bearer ${Cookies.get('token')}`}

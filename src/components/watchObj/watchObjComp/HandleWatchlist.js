@@ -17,7 +17,7 @@ function HandleWatchlist(props)
     {
         if(Cookies.get('token'))
         {
-            fetch(`${process.env.API_LINK}/user/watchlist/${watchObjId}`,
+            fetch(`https://mywatchlistapi.onrender.com/user/watchlist/${watchObjId}`,
                 {
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`}
                 })
@@ -48,7 +48,7 @@ function HandleWatchlist(props)
 
         if(!isInWatchlist)
         {
-            fetch(`${process.env.API_LINK}/user/watchlist/`,
+            fetch(`https://mywatchlistapi.onrender.com/user/watchlist/`,
                 {
                     method: "POST",
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},
@@ -74,7 +74,7 @@ function HandleWatchlist(props)
                 })
         } else
         {
-            fetch(`${process.env.API_LINK}/user/watchlist/${watchlistArrObjId}`,
+            fetch(`https://mywatchlistapi.onrender.com/user/watchlist/${watchlistArrObjId}`,
                 {
                     method: "DELETE",
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},

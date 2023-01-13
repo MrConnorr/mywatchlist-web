@@ -31,7 +31,7 @@ function App() {
     {
         if(Cookies.get('token'))
         {
-            fetch(`${process.env.API_LINK}/user/checkToken/${Cookies.get('token')}`)
+            fetch(`https://mywatchlistapi.onrender.com/user/checkToken/${Cookies.get('token')}`)
                 .then(response =>
                 {
                     if(response.ok)

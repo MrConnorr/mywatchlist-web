@@ -38,7 +38,7 @@ function Review(props)
             }
 
 
-            fetch(`${process.env.API_LINK}/user/review/${watchObjId}`,
+            fetch(`https://mywatchlistapi.onrender.com/user/review/${watchObjId}`,
                 {
                     method: "PATCH",
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},

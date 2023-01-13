@@ -16,7 +16,7 @@ function Likes(props)
     useEffect(() =>
     {
         if(Cookies.get(`token`)) {
-            fetch(`${process.env.API_LINK}/comments/userLikes/${mediaType}/${watchObjId}`,
+            fetch(`https://mywatchlistapi.onrender.com/comments/userLikes/${mediaType}/${watchObjId}`,
                 {
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`}
                 })
@@ -48,7 +48,7 @@ function Likes(props)
     {
         if(likeBtnIcon === "heart")
         {
-            fetch(`${process.env.API_LINK}/comments/like/${mediaType}/${watchObjId}/${commentId}`,
+            fetch(`https://mywatchlistapi.onrender.com/comments/like/${mediaType}/${watchObjId}/${commentId}`,
                 {
                     method: "POST",
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`}
@@ -68,7 +68,7 @@ function Likes(props)
                 })
         } else
         {
-            fetch(`${process.env.API_LINK}/comments/like/${mediaType}/${watchObjId}/${commentId}`,
+            fetch(`https://mywatchlistapi.onrender.com/comments/like/${mediaType}/${watchObjId}/${commentId}`,
                 {
                     method: "DELETE",
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`}

@@ -18,7 +18,7 @@ function AccountOption(props)
             body.append('userProfilePic', profilePic);
             body.append('username', props.user.username);
 
-            fetch(`${process.env.API_LINK}/user/profilePic`,
+            fetch(`https://mywatchlistapi.onrender.com/user/profilePic`,
                 {
                     method: "PATCH",
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`},
@@ -68,10 +68,10 @@ function AccountOption(props)
                 <div className={styles.profile_pic_container}>
 
                     <div className={styles.profile_pic}>
-                        <img src={profilePic ? URL.createObjectURL(profilePic) : `${process.env.API_LINK}/${props.user.userProfilePic}`} alt={`${process.env.API_LINK}/${props.user.username} profile`} />
+                        <img src={profilePic ? URL.createObjectURL(profilePic) : `https://mywatchlistapi.onrender.com/${props.user.userProfilePic}`} alt={`https://mywatchlistapi.onrender.com/${props.user.username} profile`} />
                     </div>
 
-                    <form className={styles.account_form} method="POST" encType="multipart/form-data" action={`${process.env.API_LINK}/user/profilePic`} onSubmit={handleProfilePictureChange}>
+                    <form className={styles.account_form} method="POST" encType="multipart/form-data" action={`https://mywatchlistapi.onrender.com/user/profilePic`} onSubmit={handleProfilePictureChange}>
                         <label className={styles.drag_and_drop_info}>
                             Drag & Drop a file<br />
                             OR <br />

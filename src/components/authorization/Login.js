@@ -17,7 +17,7 @@ function Login(props)
 
     const handleLogin = e =>
     {
-        fetch(`${process.env.API_LINK}/user/login`,
+        fetch(`https://mywatchlistapi.onrender.com/user/login`,
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
