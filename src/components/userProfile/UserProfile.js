@@ -25,7 +25,7 @@ function UserProfile(props)
     const [imageColors, setImageColors] = useState([]);
 
     const {username} = useParams();
-    const url = Cookies.get('token') ? `https://mywatchlist-apiv2.herokuapp.com/user/one/${username}/${Cookies.get('token')}` : `https://mywatchlist-apiv2.herokuapp.com/user/one/${username}`;
+    const url = Cookies.get('token') ? `${process.env.API_LINK}/user/one/${username}/${Cookies.get('token')}` : `${process.env.API_LINK}/user/one/${username}`;
 
     const [clickedId, setClickedId] = useState(null);
     const [hoveredId, setHoveredId] = useState(null);
@@ -74,7 +74,7 @@ function UserProfile(props)
     {
         if(user.userProfilePic !== undefined)
         {
-            getColors(`https://mywatchlist-apiv2.herokuapp.com/${user.userProfilePic}`).then(colors =>
+            getColors(`${process.env.API_LINK}/${user.userProfilePic}`).then(colors =>
             {
                 colors.map(color => setImageColors(prev => [color.hex(), ...prev]));
             })
@@ -151,7 +151,7 @@ function UserProfile(props)
                 break;
         }
 
-        fetch(`https://mywatchlist-apiv2.herokuapp.com/user/review/${watchObjId}`,
+        fetch(`${process.env.API_LINK}/user/review/${watchObjId}`,
             {
                 method: "PATCH",
                 headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},

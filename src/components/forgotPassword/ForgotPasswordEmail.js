@@ -12,7 +12,7 @@ function ForgotPasswordEmail(props)
     {
         e.preventDefault();
 
-        fetch("https://mywatchlist-apiv2.herokuapp.com/user/forgotPassword",
+        fetch(`${process.env.API_LINK}/user/forgotPassword`,
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},

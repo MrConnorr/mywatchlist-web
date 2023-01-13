@@ -24,7 +24,7 @@ function Comments(props)
 
     useEffect(() =>
     {
-        fetch(`https://mywatchlist-apiv2.herokuapp.com/comments/${mediaType}/${watchObjId}`)
+        fetch(`${process.env.API_LINK}/comments/${mediaType}/${watchObjId}`)
             .then(response => response.json())
             .then(data =>
             {
@@ -63,7 +63,7 @@ function Comments(props)
                     {comments.slice(0, secondSlice).map(comment =>
                         <div key={comment.id} className={styles.comment_container} style={{marginLeft: comment.replyToReply ? "75px" : comment.replyTo ? "37.5px" : null, borderLeft: comment.replyTo || comment.replyToReply ? "2px dashed" : null}}>
                             <div className={styles.comment_content}>
-                                <img src={`${comment.deleted ? "https://mywatchlist-apiv2.herokuapp.com/usersProfilePics/default.jpg" : `https://res.cloudinary.com/hlzbzu7fj/image/upload/${comment.createdBy.username}-profilePic.png`}`} alt={`${comment.createdBy.username} profile picture`} />
+                                <img src={`${comment.deleted ? `${process.env.API_LINK}/usersProfilePics/default.jpg` : `https://res.cloudinary.com/hlzbzu7fj/image/upload/${comment.createdBy.username}-profilePic.png`}`} alt={`${comment.createdBy.username} profile picture`} />
 
                                 <div className={styles.comment_info}>
                                     <div className={styles.user_info}>

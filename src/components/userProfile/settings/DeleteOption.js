@@ -13,7 +13,7 @@ function DeleteOption(props)
 
     const handleDeleteAccount = () =>
     {
-        fetch("https://mywatchlist-apiv2.herokuapp.com/user",
+        fetch(`${process.env.API_LINK}/user`,
             {
                 method: "DELETE",
                 headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},

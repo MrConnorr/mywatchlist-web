@@ -17,7 +17,7 @@ function HandleWatchlist(props)
     {
         if(Cookies.get('token'))
         {
-            fetch(`https://mywatchlist-apiv2.herokuapp.com/user/watchlist/${watchObjId}`,
+            fetch(`${process.env.API_LINK}/user/watchlist/${watchObjId}`,
                 {
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`}
                 })
@@ -48,7 +48,7 @@ function HandleWatchlist(props)
 
         if(!isInWatchlist)
         {
-            fetch("https://mywatchlist-apiv2.herokuapp.com/user/watchlist/",
+            fetch(`${process.env.API_LINK}/user/watchlist/`,
                 {
                     method: "POST",
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},
@@ -74,7 +74,7 @@ function HandleWatchlist(props)
                 })
         } else
         {
-            fetch(`https://mywatchlist-apiv2.herokuapp.com/user/watchlist/${watchlistArrObjId}`,
+            fetch(`${process.env.API_LINK}/user/watchlist/${watchlistArrObjId}`,
                 {
                     method: "DELETE",
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},

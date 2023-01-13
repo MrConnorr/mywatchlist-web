@@ -15,7 +15,7 @@ function SecurityOption(props)
     {
         e.preventDefault();
 
-        fetch("https://mywatchlist-apiv2.herokuapp.com/user/password",
+        fetch(`${process.env.API_LINK}/user/password`,
             {
                 method: "PATCH",
                 headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},

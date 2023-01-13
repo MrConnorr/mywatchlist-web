@@ -19,7 +19,7 @@ function NavBar(props)
     {
         if(Cookies.get('token') !== undefined)
         {
-            fetch(`https://mywatchlist-apiv2.herokuapp.com/user/checkToken/${Cookies.get('token')}`)
+            fetch(`${process.env.API_LINK}/user/checkToken/${Cookies.get('token')}`)
                 .then(response => response.json())
                 .then(data =>
                 {
@@ -40,7 +40,7 @@ function NavBar(props)
     {
         if(isLoggedIn !== false)
         {
-            fetch(`https://mywatchlist-apiv2.herokuapp.com/user/`,
+            fetch(`${process.env.API_LINK}/user/`,
                 {
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`}
                 })

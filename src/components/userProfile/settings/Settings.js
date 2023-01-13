@@ -27,7 +27,7 @@ function Settings(props)
 
     useEffect(() =>
     {
-        fetch("https://mywatchlist-apiv2.herokuapp.com/user/",
+        fetch(`${process.env.API_LINK}/user/`,
             {
                 headers: {'Authorization': `Bearer ${Cookies.get('token')}`}
             })

@@ -17,7 +17,7 @@ function Login(props)
 
     const handleLogin = e =>
     {
-        fetch("https://mywatchlist-apiv2.herokuapp.com/user/login",
+        fetch(`${process.env.API_LINK}/user/login`,
             {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},

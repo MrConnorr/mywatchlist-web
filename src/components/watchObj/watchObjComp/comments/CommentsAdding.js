@@ -9,7 +9,7 @@ function CommentsAdding(props)
     const {mediaType, watchObjId, commentId, setMessage, setState, setComments, setIsReplyClicked, isReplyClicked} = props;
 
     const [comment, setComment] = useState("");
-    const url = isReplyClicked ? `https://mywatchlist-apiv2.herokuapp.com/comments/${mediaType}/${watchObjId}/${commentId}` : `https://mywatchlist-apiv2.herokuapp.com/comments/${mediaType}/${watchObjId}`;
+    const url = isReplyClicked ? `${process.env.API_LINK}/comments/${mediaType}/${watchObjId}/${commentId}` : `${process.env.API_LINK}/comments/${mediaType}/${watchObjId}`;
 
     const navigate = useNavigate();
 

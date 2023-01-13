@@ -38,7 +38,7 @@ function Review(props)
             }
 
 
-            fetch(`https://mywatchlist-apiv2.herokuapp.com/user/review/${watchObjId}`,
+            fetch(`${process.env.API_LINK}/user/review/${watchObjId}`,
                 {
                     method: "PATCH",
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`, 'Content-Type': 'application/json'},

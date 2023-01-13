@@ -12,7 +12,7 @@ function VerificationCompleting(props)
 
     useEffect(() =>
     {
-        fetch(`https://mywatchlist-apiv2.herokuapp.com/user/verify/${token}`,
+        fetch(`${process.env.API_LINK}/user/verify/${token}`,
             {
                 method: "POST"
             })

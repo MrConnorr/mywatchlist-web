@@ -29,7 +29,7 @@ function VerificationNeeded(props)
 
         if(!currentEmail.toLowerCase().match(emailValidation))
         {
-            fetch(`https://mywatchlist-apiv2.herokuapp.com/user/getEmail/${currentEmail}`)
+            fetch(`${process.env.API_LINK}/user/getEmail/${currentEmail}`)
                 .then(response => response.json())
                 .then(data => setCurrentEmail(data.email))
                 .catch(err => console.log(err))
@@ -71,7 +71,7 @@ function VerificationNeeded(props)
 
     const handleEmailChange = () =>
     {
-        fetch("https://mywatchlist-apiv2.herokuapp.com/user/verify/changeEmail",
+        fetch("${process.env.API_LINK}/user/verify/changeEmail",
             {
                 method: "PATCH",
                 headers: {'Content-Type': 'application/json'},
@@ -87,7 +87,7 @@ function VerificationNeeded(props)
             {
                 if (data.error) throw new Error(data.error);
 
-                fetch("https://mywatchlist-apiv2.herokuapp.com/user/verifyResend",
+                fetch(`${process.env.API_LINK}/user/verifyResend`,
                     {
                         method: "POST",
                         headers: {'Content-Type': 'application/json'},
@@ -123,7 +123,7 @@ function VerificationNeeded(props)
     const handleVerifyResend = () =>
     {
         setIsVerifyResendClicked(true);
-        fetch("https://mywatchlist-apiv2.herokuapp.com/user/verifyResend",
+        fetch(`${process.env.API_LINK}/user/verifyResend`,
             {
                 method: "POST",
                 headers: {'Content-Type': 'application/json'},

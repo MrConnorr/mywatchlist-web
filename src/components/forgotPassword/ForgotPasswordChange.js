@@ -18,7 +18,7 @@ function ForgotPasswordChange(props)
 
     useEffect(() =>
     {
-        fetch(`https://mywatchlist-apiv2.herokuapp.com/user/checkToken/${token}`)
+        fetch(`${process.env.API_LINK}/user/checkToken/${token}`)
             .then(response => response.json())
             .then(data =>
             {
@@ -40,7 +40,7 @@ function ForgotPasswordChange(props)
     {
         e.preventDefault();
 
-        fetch(`https://mywatchlist-apiv2.herokuapp.com/user/forgotPassword/${token}`,
+        fetch(`${process.env.API_LINK}/user/forgotPassword/${token}`,
             {
                 method: 'PATCH',
                 headers: {'Content-Type': 'application/json'},

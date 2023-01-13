@@ -13,7 +13,7 @@ function CommentsDeleting(props)
     {
         if(Cookies.get(`token`))
         {
-            fetch(`https://mywatchlist-apiv2.herokuapp.com/comments/userComments/${mediaType}/${watchObjId}`,
+            fetch(`${process.env.API_LINK}/comments/userComments/${mediaType}/${watchObjId}`,
                 {
                     headers: {'Authorization': `Bearer ${Cookies.get('token')}`}
                 })
@@ -45,7 +45,7 @@ function CommentsDeleting(props)
 
     const handleCommentDelete = () =>
     {
-        fetch(`https://mywatchlist-apiv2.herokuapp.com/comments/${mediaType}/${watchObjId}/${commentId}`,
+        fetch(`${process.env.API_LINK}/comments/${mediaType}/${watchObjId}/${commentId}`,
             {
                 method: 'DELETE',
                 headers: {'Authorization': `Bearer ${Cookies.get('token')}`}
